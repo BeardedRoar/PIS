@@ -31,6 +31,11 @@ $RECYCLE.BIN/
 # Thumbnails
 ._*
 
+
+# Assembled files
+*.s19
+*.lst
+
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes

@@ -4,5 +4,10 @@ HexDisplay	EQU	$700
 
 ; Adress till borrmaskinens styrregister
 DrillControl	EQU	$400
+
 ; Adress till borrmaskinens statusregister
+#ifdef SIMULATOR
 DrillStatus	EQU	$401
+#else
+DrillStatus	EQU	$600
+#endif

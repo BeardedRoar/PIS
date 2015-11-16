@@ -1,3 +1,4 @@
+	#define	SIMULATOR
 	USE	Labdefs.asm	
 	ORG	$1000
 	

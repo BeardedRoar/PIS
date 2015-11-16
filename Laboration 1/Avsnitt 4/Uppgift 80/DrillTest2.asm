@@ -33,7 +33,7 @@ Vrid1steg:
 	STAA	DrillControl
 	
 	LDAA	DCShadow
-	ORAA	#%00000011	; Ettställa stegpuls-biten (ge puls)
+	ORAA	#%00000001	; Ettställa stegpuls-biten (ge puls)
 	STAA	DCShadow
 	STAA	DrillControl
 	
@@ -62,7 +62,7 @@ Borra:
 	STAA	DrillControl
 	
 	LDAA	DCShadow
-	ORAA	#%00001100	; Sänk borr
+	ORAA	#%00001000	; Sänk borr
 	STAA	DCShadow
 	STAA	DrillControl
 	

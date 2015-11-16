@@ -1,8 +1,9 @@
-	USE	Labdefs.asm
+	USE	Labdefs.asm	
 	ORG	$1000
 	
 Start:
-	LDAA	#0	; Reset
+	CLRA
+	STAA	DCShadow
 	STAA	DrillControl
 	
 	JSR	TillRefPos
@@ -21,20 +22,24 @@ Stopp:
 	
 ; Subrutin Vrid1steg	
 Vrid1steg:
-	LDAA	DrillControl
+	LDAA	DCShadow
 	ANDA	#%11111110	; Nollställa stegpuls-biten
+	STAA	DCShadow
 	STAA	DrillControl
 	
-	LDAA	DrillControl
+	LDAA	DCShadow
 	ORAA	#%00000010	; Ettställa vridningsriktningsbiten (vridningsriktioning moturs)
+	STAA	DCShadow
 	STAA	DrillControl
 	
-	LDAA	DrillControl
+	LDAA	DCShadow
 	ORAA	#%00000011	; Ettställa stegpuls-biten (ge puls)
+	STAA	DCShadow
 	STAA	DrillControl
 	
-	LDAA	DrillControl
+	LDAA	DCShadow
 	ANDA	#%11111110	; Nollställa stegpuls-biten
+	STAA	DCShadow
 	STAA	DrillControl
 	
 	RTS
@@ -51,32 +56,39 @@ TillRefPos_End:
 
 ; Subrutin Borra
 Borra:
-	LDAA	DrillControl
+	LDAA	DCShadow
 	ORAA	#%00000100	; Starta motorn
+	STAA	DCShadow
 	STAA	DrillControl
 	
-	LDAA	DrillControl
+	LDAA	DCShadow
 	ORAA	#%00001100	; Sänk borr
+	STAA	DCShadow
 	STAA	DrillControl
 	
 Borra_While:
 	BRCLR	DrillStatus,#%00000100,Borra_While
 	
-	LDAA	DrillControl
+	LDAA	DCShadow
 	ANDA	#%11110111	; Höj borr
+	STAA	DCShadow
 	STAA	DrillControl
 	
-	LDAA	DrillControl
+	LDAA	DCShadow
 	ANDA	#%11111011	; Stoppa motorn
+	STAA	DCShadow
 	STAA	DrillControl
 	
-	RTSz
+	RTS
 ; Slut Borra
 	
 ; Subrutin GeLarm
 GeLarm:
-	LDAA	DrillControl
+	LDAA	DCShadow
 	ORAA	#%00010000	; Sätt på larm
+	STAA	DCShadow
 	STAA	DrillControl
 	RTS
 ; Slut GeLarm
+
+DCShadow	RMB	1

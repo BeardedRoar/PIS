@@ -1,8 +1,6 @@
 ; Operatörsstyrd borrautomat
 
 ; Definitioner	
-	#define	SIMULATOR
-	#define	RUNFAST
 ;	USE	Labdefs.asm
 	
 Error_Code	EQU	$FF

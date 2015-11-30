@@ -3,6 +3,9 @@ StackAddress0	EQU	$3100
 StackAddress1	EQU	$3200
 IrqVector	EQU	$3FF2
 IrqFlipFlop	EQU	$0DC0
+
+	#define	SIMULATOR
+	#define	RUNFAST
 	
 	ORG	$1000
 	
@@ -25,7 +28,6 @@ Main:
 ; Avbrottsrutin
 ;Byter process
 IrqHandler:
-	PSHD
 	
 	LDD	ProcCounter
 	ASLB
@@ -46,7 +48,6 @@ IrqHandler:
 	ASLB
 	PSHD
 	PULY
-	PULD
 	LDS	SPTable,Y
 	;Räkna ut var nästa process' stackpekare ska läsas från och läs in den
 

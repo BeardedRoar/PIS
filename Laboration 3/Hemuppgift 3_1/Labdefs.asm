@@ -31,3 +31,10 @@ Utport	EQU	$400
 
 ; Adress till tangentbordet
 Keyboard	EQU	$9C0
+
+; ML19-definitioner
+ML19_Stat	EQU	$0DC0
+; Kvittera händelse 1
+ML19_AckIrq_1	EQU	$0DC2
+; Kvittera händelse 2
+ML19_AckIrq_2	EQU	$0DC3

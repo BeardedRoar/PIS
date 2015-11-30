@@ -1,23 +1,21 @@
 ; Operatörsstyrd borrautomat
 
 ; Definitioner	
-	ORG	$1000
-	
 	#define	SIMULATOR
 	#define	RUNFAST
-	USE	Labdefs.asm
+;	USE	Labdefs.asm
 	
 Error_Code	EQU	$FF
 	
-Main:
+Drill:
 	MOVB	#$00,DCShadow		; Passiva styrsignaler till borrens skuggvariabel
 	MOVB	#$00,DrillControl	; Samt till borren
 
 ; Invänta vald operation
-Main_Loop:
+Drill_Loop:
 	JSR	GetKbdML15		; Tangentkod läggs i register B
 	JSR	Command			; Den valda operationen utförs
-	BRA	Main_Loop
+	BRA	Drill_Loop
 	
 ; Subrutin Command
 ; Avgör vilken kommandosubrutin som ska köras och anropar denna.
@@ -457,8 +455,6 @@ Delay_End:
 	PULX
 	RTS
 ; End Delay
-
-	USE Labdefs.asm
 	
 ; Pekartabell för subrutiner till Command
 JUMPTAB FDB	MotorStart,MotorStop

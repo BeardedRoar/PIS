@@ -49,3 +49,6 @@ Temporary Items
 
 # Temporary files
 *~
+
+# CodeLite
+*.tags

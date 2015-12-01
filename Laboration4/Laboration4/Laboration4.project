@@ -91,6 +91,8 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="main.c"/>
+    <File Name="qtest.c"/>
+    <File Name="queue.c"/>
+    <File Name="queue.h"/>
   </VirtualDirectory>
 </CodeLite_Project>

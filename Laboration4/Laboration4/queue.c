@@ -11,14 +11,31 @@ QueuePtr new_queue() {
     return queueP;
 }
 
-// tar bort kön helt och hållet
+/* Removes the entire queue */
 void delete_queue(QueuePtr q) {
-         	
+    clear(q);
+    free(q);
 }
-void clear(QueuePtr q);                 	// tar bort köelementen men behåller kön
-int  size(QueuePtr q);						// räknar köns aktuella längd
 
-// lägger in d på rätt plats 
+/* Clears all elements, but keeps the queue. */ 
+void clear(QueuePtr q) {
+    while(q->next) {
+        remove_first(q);
+    }
+}
+
+/* Calculates the size of the queue */
+int size(QueuePtr q) {
+    int size = 0;
+    
+    while (q->next) {
+        size++;
+        q = q->next;
+    }
+    return size;
+}
+
+/* Adds the new data in the correct place in the queue */
 void add(QueuePtr q, int prio, DataPtr d) {
 	while(q->next && q->next->prio > prio) {
 		q = q->next;
@@ -30,7 +47,7 @@ void add(QueuePtr q, int prio, DataPtr d) {
 	q->next = nextP;
 }
 
-// avläser första dataelementet 
+/* Returns the first data element of the queue */
 DataPtr get_first(QueuePtr q) {
 	if(q->next) {
 		return q->next->data;
@@ -38,4 +55,13 @@ DataPtr get_first(QueuePtr q) {
 		return 0;
 	}
 }
-void remove_first(QueuePtr q);				// tar bort första köelementet
+
+/* Removes the first queue element */
+void remove_first(QueuePtr q) {
+    if (q->next) {
+        QueuePtr first = q->next;
+        
+        q->next = first->next;
+        free(first);
+    }
+}

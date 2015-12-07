@@ -53,3 +53,7 @@ Temporary Items
 # CodeLite
 Laboration4/.codelite/
 *.tags
+*/Debug/
+*.mk
+Laboration4/Laboration4/Laboration4.txt
+*/Makefile

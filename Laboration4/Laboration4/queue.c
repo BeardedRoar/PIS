@@ -37,7 +37,7 @@ int size(QueuePtr q) {
 
 /* Adds the new data in the correct place in the queue */
 void add(QueuePtr q, int prio, DataPtr d) {
-	while(q->next && q->next->prio > prio) {
+	while(q->next && q->next->prio >= prio) {
 		q = q->next;
 	}
 	QueuePtr nextP = (QueuePtr)malloc(sizeof(struct QueueElement));

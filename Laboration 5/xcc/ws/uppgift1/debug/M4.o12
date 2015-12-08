@@ -1,0 +1,38 @@
+mod:M4:O12:M4.o12
+seg:text:15
+seg:bss:0
+seg:data:0
+seg:rodata:0
+C:text	1B9FF606006B80E6807B04001B813D
+G:text:M4:00000000:_main
+SY:C:M:M4$C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/M4.c
+SY:C:F:M4:text:_main:00000000:3
+SY:C:X:M4:3:1:text:0
+SY:C:S:F:M4:main:_main:(typ0)(typ0)
+SY:C:S:F:M4:__func__:___func__:(typ11)
+SY:C:S:L:M4:main:c:0:(typ3)
+SY:C:X:M4:5:23:text:2
+SY:C:X:M4:6:23:text:7
+SY:C:X:M4:7:1:text:C
+SY:C:Z:M4:7:1:text:C
+SY:C:E:M4:text:_main:0000000F:7
+SY:C:T:  typ0 V (-1)
+SY:C:T:  typ1 L (4)
+SY:C:T:  typ2 l (4)
+SY:C:T:  typ3 C (1)
+SY:C:T:  typ4 c (1)
+SY:C:T:  typ5 S (2)
+SY:C:T:  typ6 s (2)
+SY:C:T:  typ7 g (4)
+SY:C:T:  typ8 G (4)
+SY:C:T:  typ9 h (4)
+SY:C:T:  typ10 R (2)
+SY:C:T:  typ11 I (2)
+SY:C:T:  typ12 i (2)
+SY:C:T:  typ13 E (2)
+SY:C:T:  typ14 F (2)
+SY:C:T:  typ15 P (2)
+SY:C:T: typ2 l (4)
+SY:C:T: typ4 c (1)
+SY:C:T: typ6 s (2)
+e

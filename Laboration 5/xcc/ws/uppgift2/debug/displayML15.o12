@@ -1,0 +1,75 @@
+mod:displayML15:O12:displayML15.o12
+seg:text:149
+seg:bss:0
+seg:data:0
+seg:rodata:0
+C:text	1B9EC601FA09C27B09C2C6D07B09C387
+C:text	C76C80EC808C00062D092014EE80086E
+C:text	8020F0EC84E380B745E6007B09C320EC
+C:text	7909C37909C31B823D
+C:text	1B9987C76C8387C76C83EC838C00062D
+C:text	0B1820003CEE83086E8320EEEC83C300
+C:text	016C81EC89CE000A1810E882A881CE00
+C:text	0A1810B754E884A8836B80ED83E6806B
+C:text	80CC000113E385B745E6806B001820FF
+C:text	C4EE85341600001B821B873D
+RG:text:displayML15:0000008E:O:W:_display_digits:176
+G:text:displayML15:00000000:_display_digits
+G:text:displayML15:00000039:_display_dec
+SY:C:M:displayML15$C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/displayML15.c
+SY:C:F:displayML15:text:_display_digits:00000000:6
+SY:C:X:displayML15:6:1:text:0
+SY:C:S:F:displayML15:display_digits:_display_digits:(typ0)(typ16-displayML15)
+SY:C:S:L:displayML15:display_digits:digits:4:(typ16-displayML15)
+SY:C:S:F:displayML15:__func__:___func__:(typ11)
+SY:C:S:L:displayML15:display_digits:i:0:(typ11)
+SY:C:X:displayML15:9:27:text:2
+SY:C:X:displayML15:10:26:text:A
+SY:C:X:displayML15:12:19:text:F
+SY:C:X:displayML15:14:8:text:F
+SY:C:X:displayML15:14:15:text:13
+SY:C:X:displayML15:14:22:text:1C
+SY:C:X:displayML15:15:33:text:23
+SY:C:X:displayML15:18:23:text:30
+SY:C:X:displayML15:19:23:text:33
+SY:C:X:displayML15:20:1:text:36
+SY:C:Z:displayML15:20:1:text:36
+SY:C:E:displayML15:text:_display_digits:00000039:20
+SY:C:F:displayML15:text:_display_dec:00000039:22
+SY:C:X:displayML15:22:1:text:39
+SY:C:S:F:displayML15:display_dec:_display_dec:(typ0)(typ12)
+SY:C:S:L:displayML15:display_dec:number:9:(typ12)
+SY:C:S:F:displayML15:__func__:___func__:(typ11)
+SY:C:S:L:displayML15:display_dec:digits:5:(typ18-displayML15)
+SY:C:S:L:displayML15:display_dec:i:3:(typ11)
+SY:C:X:displayML15:24:10:text:3B
+SY:C:X:displayML15:26:8:text:3F
+SY:C:X:displayML15:26:15:text:43
+SY:C:X:displayML15:26:22:text:4E
+SY:C:X:displayML15:27:46:text:55
+SY:C:X:displayML15:30:24:text:8A
+SY:C:X:displayML15:31:1:text:92
+SY:C:Z:displayML15:31:1:text:92
+SY:C:E:displayML15:text:_display_dec:00000095:31
+SY:C:T:  typ0 V (-1)
+SY:C:T:  typ1 L (4)
+SY:C:T:  typ2 l (4)
+SY:C:T:  typ3 C (1)
+SY:C:T:  typ4 c (1)
+SY:C:T:  typ5 S (2)
+SY:C:T:  typ6 s (2)
+SY:C:T:  typ7 g (4)
+SY:C:T:  typ8 G (4)
+SY:C:T:  typ9 h (4)
+SY:C:T:  typ10 R (2)
+SY:C:T:  typ11 I (2)
+SY:C:T:  typ12 i (2)
+SY:C:T:  typ13 E (2)
+SY:C:T:  typ14 F (2)
+SY:C:T:  typ15 P (2)
+SY:C:T:displayML15: typ16-displayML15 a *(typ4)
+SY:C:T:displayML15: typ18-displayML15 a *(typ4)
+SY:C:T: typ2 l (4)
+SY:C:T: typ4 c (1)
+SY:C:T: typ6 s (2)
+e

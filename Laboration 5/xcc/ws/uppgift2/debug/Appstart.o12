@@ -1,0 +1,18 @@
+mod:Appstart:O12:Appstart.o12
+seg:text:0
+seg:init:9
+C:init	CF2FFF160000A720FD
+RG:init:Appstart:00000004:O:W:_main:8
+G:init:Appstart:00000006:_exit
+G:init:Appstart:00000000:__start
+SY:A:M:Appstart$C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/Appstart.s12
+SY:A:X:Appstart:7:init:0
+SY:A:X:Appstart:8:init:3
+SY:A:X:Appstart:10:init:6
+SY:A:X:Appstart:11:init:7
+SY:C:T: typ2 l (4)
+SY:C:T: typ4 c (1)
+SY:C:T: typ6 s (2)
+SY:A:F:Appstart:init:__start:00000000:6
+SY:A:E:Appstart:init:__start:9:12
+e

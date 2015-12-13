@@ -1,0 +1,222 @@
+# V 2.2 (26 February, 2013)
+# Created by Xcc-project manager 
+# DO NOT EDIT
+#
+#-----------------------------------------------
+#SETTINGS SECTION
+##CSIMSET="..\uppgift2\digits.hc12sim"
+##EXTMAKEFILE=""
+##EXTMAKEFILEPARAM=""
+#+[BackCol(0)]=
+#+16776960
+#+[TextCol(0)]=
+#+0
+#+[NewLine(0)]=
+#+2
+#+[LineFeed(0)]=
+#+2
+#+[LoadCom(0)]=
+#+l\n
+#+[Baud(0)(0)]=
+#+9600
+#+[Dtr(0)(0)]=
+#+0
+#+[Rts(0)(0)]=
+#+0
+#+[Cts(0)(0)]=
+#+0
+#+[Dsr(0)(0)]=
+#+0
+#+[ByteS(0)(0)]=
+#+8
+#+[Parity(0)(0)]=
+#+0
+#+[StopB(0)(0)]=
+#+0
+#+[EXonO(0)(0)]=
+#+0
+#+[EXonI(0)(0)]=
+#+0
+#-----------------------------------------------
+##TYPE E
+##USESTARTUP=0
+##OTYPE=1
+#-----------------------------------------------
+#OPEN FILE SECTION
+#-----------------------------------------------
+#PROJECT FILES SECTION
+
+FILES= \
+	"..\..\src\Appstart.s12" "" "1"  \
+	"..\..\src\M4.c" "" "1"  \
+	"..\..\src\ports.h" "" "1" 
+#-----------------------------------------------
+#PROJECT OPTIONS SECTION
+
+!IFCONF	Debug
+##TARGETNAME="uppgift1_Debug"
+##OBJDIR="debug"
+##TARGDIR="debug"
+##STDINCPATH=1
+##STDLIBPATH=1
+ASFLAGS=-g -e
+CCFLAGS=-g -w4 -O
+LNFLAGS=-g -i default.lsc
+#-----------------------------------------------
+#OBJECT FILES SECTION
+
+OBJ= \
+	"debug\Appstart.o12" \
+	"debug\M4.o12"
+#-----------------------------------------------
+#DEFINES/UNDEFINES SECTION
+
+ASMDEFINES= \
+	_DEBUG
+
+DEFINES= \
+	_DEBUG
+
+UNDEFINES=
+#-----------------------------------------------
+#INCLUDES AND LIBRARIES SECTION
+#
+
+INCLUDES=
+
+LIBRARIES= \
+	"libcd.e12" \
+	"libed.e12" \
+	"librtkd.e12"
+
+LIBRARYPATHS=
+#-----------------------------------------------
+#MACROS for MAKE
+
+INC=
+
+ASMDEF= \
+ -D_DEBUG
+
+DEF= \
+ -D_DEBUG
+
+UNDEF=
+
+LIB= \
+	-l"libcd.e12" \
+	-l"libed.e12" \
+	-l"librtkd.e12"
+
+LIBPATH=
+#-----------------------------------------------
+#RULES SECTION CONFIGURATION 
+
+# Application
+"debug\uppgift1_Debug.s19": $(OBJ)
+	LINK -o"debug\uppgift1_Debug.s19" $(LNFLAGS)  $(LIBPATH) $(LIB) -L"C:\Applications\GMV\EducDist\bin\..\lib\xcc12" -l"C:\Applications\GMV\EducDist\bin\..\lib\xcc12\libccd.e12"  $(OBJ)
+#-----------------------------------------------
+
+
+# Clean
+clean:
+	RMFI "debug\uppgift1_Debug.s19"
+	RMFI "debug\Appstart.o12"
+	RMFI "debug\M4.o12"
+	RMFI "debug\ports.o12"
+#-----------------------------------------------
+
+
+# Dependencies and their build rules
+
+"debug\Appstart.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/Appstart.s12"
+	ASSM  $(ASFLAGS) $(ASMDEF) -o"debug\Appstart.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/Appstart.s12"
+"debug\M4.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/M4.c"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/ports.h"
+	COMP  $(CCFLAGS) $(DEF) $(UNDEF)  \
+	-I"C:\Applications\GMV\EducDist\bin\..\include" $(INC) -o"debug\M4.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/M4.c"
+!EICONF	Debug
+
+!IFCONF	Final
+##TARGETNAME="uppgift1_Final"
+##OBJDIR="final"
+##TARGDIR="final"
+##STDINCPATH=1
+##STDLIBPATH=1
+ASFLAGS=-e
+CCFLAGS=-w4 -O
+LNFLAGS=-i default.lsc
+#-----------------------------------------------
+#OBJECT FILES SECTION
+
+OBJ= \
+	"final\Appstart.o12" \
+	"final\M4.o12"
+#-----------------------------------------------
+#DEFINES/UNDEFINES SECTION
+
+ASMDEFINES=
+
+DEFINES=
+
+UNDEFINES=
+#-----------------------------------------------
+#INCLUDES AND LIBRARIES SECTION
+#
+
+INCLUDES=
+
+LIBRARIES= \
+	"libc.e12" \
+	"libe.e12" \
+	"librtk.e12"
+
+LIBRARYPATHS=
+#-----------------------------------------------
+#MACROS for MAKE
+
+INC=
+
+ASMDEF=
+
+DEF=
+
+UNDEF=
+
+LIB= \
+	-l"libc.e12" \
+	-l"libe.e12" \
+	-l"librtk.e12"
+
+LIBPATH=
+#-----------------------------------------------
+#RULES SECTION CONFIGURATION 
+
+# Application
+"final\uppgift1_Final.s19": $(OBJ)
+	LINK -o"final\uppgift1_Final.s19" $(LNFLAGS)  $(LIBPATH) $(LIB) -L"C:\Applications\GMV\EducDist\bin\..\lib\xcc12" -l"C:\Applications\GMV\EducDist\bin\..\lib\xcc12\libcc.e12"  $(OBJ)
+#-----------------------------------------------
+
+
+# Clean
+clean:
+	RMFI "final\uppgift1_Final.s19"
+	RMFI "final\Appstart.o12"
+	RMFI "final\M4.o12"
+	RMFI "final\ports.o12"
+#-----------------------------------------------
+
+
+# Dependencies and their build rules
+
+"final\Appstart.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/Appstart.s12"
+	ASSM  $(ASFLAGS) $(ASMDEF) -o"final\Appstart.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/Appstart.s12"
+"final\M4.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/M4.c"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/ports.h"
+	COMP  $(CCFLAGS) $(DEF) $(UNDEF)  \
+	-I"C:\Applications\GMV\EducDist\bin\..\include" $(INC) -o"final\M4.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/M4.c"
+!EICONF	Final

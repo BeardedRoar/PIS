@@ -31,11 +31,6 @@ $RECYCLE.BIN/
 # Thumbnails
 ._*
 
-
-# Assembled files
-*.s19
-*.lst
-
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
@@ -58,3 +53,13 @@ Laboration4/Laboration4/Debug/
 *.mk
 Laboration4/Laboration4/Laboration4.txt
 */Makefile
+
+# Assembled and compiled files
+*.s19
+*.lst
+*.o12
+*.map
+*/first.w12
+*/ws/hello/
+*/ws/105/
+*/ws/ML4/

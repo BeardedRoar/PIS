@@ -4,6 +4,7 @@
 #
 #-----------------------------------------------
 #SETTINGS SECTION
+##CSIMSET="..\hello\console.hc12sim"
 ##EXTMAKEFILE=""
 ##EXTMAKEFILEPARAM=""
 #+[BackCol(0)]=
@@ -46,12 +47,13 @@
 #PROJECT FILES SECTION
 
 FILES= \
-	"..\..\..\..\..\..\..\..\Applications\GMV\EducDist\src\startup\xcc12\_startup.s12" "" "1" 
+	"..\..\..\..\..\..\..\..\Applications\GMV\EducDist\src\startup\xcc12\_startup.s12" "" "1"  \
+	"..\..\src\hexnum.c" "" "1" 
 #-----------------------------------------------
 #PROJECT OPTIONS SECTION
 
 !IFCONF	Debug
-##TARGETNAME="hello_Debug"
+##TARGETNAME="hexnum_Debug"
 ##OBJDIR="debug"
 ##TARGDIR="debug"
 ##STDINCPATH=1
@@ -63,7 +65,8 @@ LNFLAGS=-g -i default.lsc
 #OBJECT FILES SECTION
 
 OBJ= \
-	"debug\_startup.o12"
+	"debug\_startup.o12" \
+	"debug\hexnum.o12"
 #-----------------------------------------------
 #DEFINES/UNDEFINES SECTION
 
@@ -109,15 +112,16 @@ LIBPATH=
 #RULES SECTION CONFIGURATION 
 
 # Application
-"debug\hello_Debug.s19": $(OBJ)
-	LINK -o"debug\hello_Debug.s19" $(LNFLAGS)  $(LIBPATH) $(LIB) -L"C:\Applications\GMV\EducDist\bin\..\lib\xcc12" -l"C:\Applications\GMV\EducDist\bin\..\lib\xcc12\libccd.e12"  $(OBJ)
+"debug\hexnum_Debug.s19": $(OBJ)
+	LINK -o"debug\hexnum_Debug.s19" $(LNFLAGS)  $(LIBPATH) $(LIB) -L"C:\Applications\GMV\EducDist\bin\..\lib\xcc12" -l"C:\Applications\GMV\EducDist\bin\..\lib\xcc12\libccd.e12"  $(OBJ)
 #-----------------------------------------------
 
 
 # Clean
 clean:
-	RMFI "debug\hello_Debug.s19"
+	RMFI "debug\hexnum_Debug.s19"
 	RMFI "debug\_startup.o12"
+	RMFI "debug\hexnum.o12"
 #-----------------------------------------------
 
 
@@ -126,10 +130,14 @@ clean:
 "debug\_startup.o12":	\
 	"C:/Applications/GMV/EducDist/src/startup/xcc12/_startup.s12"
 	ASSM  $(ASFLAGS) $(ASMDEF) -o"debug\_startup.o12" "C:/Applications/GMV/EducDist/src/startup/xcc12/_startup.s12"
+"debug\hexnum.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/hexnum.c"
+	COMP  $(CCFLAGS) $(DEF) $(UNDEF)  \
+	-I"C:\Applications\GMV\EducDist\bin\..\include" $(INC) -o"debug\hexnum.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/hexnum.c"
 !EICONF	Debug
 
 !IFCONF	Final
-##TARGETNAME="hello_Final"
+##TARGETNAME="hexnum_Final"
 ##OBJDIR="final"
 ##TARGDIR="final"
 ##STDINCPATH=1
@@ -141,7 +149,8 @@ LNFLAGS=-i default.lsc
 #OBJECT FILES SECTION
 
 OBJ= \
-	"final\_startup.o12"
+	"final\_startup.o12" \
+	"final\hexnum.o12"
 #-----------------------------------------------
 #DEFINES/UNDEFINES SECTION
 
@@ -183,15 +192,16 @@ LIBPATH=
 #RULES SECTION CONFIGURATION 
 
 # Application
-"final\hello_Final.s19": $(OBJ)
-	LINK -o"final\hello_Final.s19" $(LNFLAGS)  $(LIBPATH) $(LIB) -L"C:\Applications\GMV\EducDist\bin\..\lib\xcc12" -l"C:\Applications\GMV\EducDist\bin\..\lib\xcc12\libcc.e12"  $(OBJ)
+"final\hexnum_Final.s19": $(OBJ)
+	LINK -o"final\hexnum_Final.s19" $(LNFLAGS)  $(LIBPATH) $(LIB) -L"C:\Applications\GMV\EducDist\bin\..\lib\xcc12" -l"C:\Applications\GMV\EducDist\bin\..\lib\xcc12\libcc.e12"  $(OBJ)
 #-----------------------------------------------
 
 
 # Clean
 clean:
-	RMFI "final\hello_Final.s19"
+	RMFI "final\hexnum_Final.s19"
 	RMFI "final\_startup.o12"
+	RMFI "final\hexnum.o12"
 #-----------------------------------------------
 
 
@@ -200,4 +210,8 @@ clean:
 "final\_startup.o12":	\
 	"C:/Applications/GMV/EducDist/src/startup/xcc12/_startup.s12"
 	ASSM  $(ASFLAGS) $(ASMDEF) -o"final\_startup.o12" "C:/Applications/GMV/EducDist/src/startup/xcc12/_startup.s12"
+"final\hexnum.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/hexnum.c"
+	COMP  $(CCFLAGS) $(DEF) $(UNDEF)  \
+	-I"C:\Applications\GMV\EducDist\bin\..\include" $(INC) -o"final\hexnum.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/hexnum.c"
 !EICONF	Final

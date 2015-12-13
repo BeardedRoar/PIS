@@ -1,0 +1,65 @@
+mod:_subf:O12:_subf.o12
+seg:text:120
+seg:bss:0
+seg:data:0
+seg:rodata:0
+C:text	1B98ED8AEC8C6D846C86ED8EECF0106D
+C:text	806C82ED80EC828D000026058C000027
+C:text	0210F72608ED84EC8618200048ED84EC
+C:text	868D000026058C0000270210F7260EED
+C:text	80EC82B7C68880B7C618200028CD8000
+C:text	CC00003B35ED84EC863B351600001B88
+C:text	6D806C82ED80EC823B35ED88EC8A3B35
+C:text	1600001B881B883D
+RG:text:_subf:0000005C:O:W:eor32:106
+RG:text:_subf:00000071:O:W:addf:119
+G:text:_subf:00000000:subf
+SY:C:M:_subf$../src/libcc/common/_subf.c
+SY:C:F:_subf:text:subf:00000000:9
+SY:C:X:_subf:9:13:text:0
+SY:C:S:F:_subf:subf:subf:(typ7)(typ7)(typ7)
+SY:C:S:L:_subf:subf:a1:10:(typ7)
+SY:C:S:L:_subf:subf:a2:14:(typ7)
+SY:C:S:F:_subf:__func__:___func__:(typ11)
+SY:C:S:L:_subf:subf:fl1:4:(typ16-_subf)
+SY:C:S:L:_subf:subf:fl2:0:(typ16-_subf)
+SY:C:X:_subf:13:11:text:2
+SY:C:X:_subf:14:11:text:A
+SY:C:X:_subf:17:4:text:13
+SY:C:X:_subf:19:4:text:2D
+SY:C:X:_subf:23:36:text:4D
+SY:C:X:_subf:25:1:text:75
+SY:C:Z:_subf:25:1:text:75
+SY:C:E:_subf:text:subf:00000078:25
+SY:C:T:  typ0 V (-1)
+SY:C:T:  typ1 L (4)
+SY:C:T:  typ2 l (4)
+SY:C:T:  typ3 C (1)
+SY:C:T:  typ4 c (1)
+SY:C:T:  typ5 S (2)
+SY:C:T:  typ6 s (2)
+SY:C:T:  typ7 g (4)
+SY:C:T:  typ8 G (4)
+SY:C:T:  typ9 h (4)
+SY:C:T:  typ10 R (2)
+SY:C:T:  typ11 I (2)
+SY:C:T:  typ12 i (2)
+SY:C:T:  typ13 E (2)
+SY:C:T:  typ14 F (2)
+SY:C:T:  typ15 P (2)
+SY:C:T:_subf: typ16-_subf Z (4)U float_long {\
+f:(0):(typ7);\
+l:(0):(typ1);\
+}
+SY:C:T:_subf: typ17-_subf Z (4)U long_int {\
+l:(0):(typ1);\
+s:(0):(typ18-_subf);\
+}
+SY:C:T:_subf: typ18-_subf Z (4)S {\
+msw:(0):(typ12);\
+lsw:(2):(typ12);\
+}
+SY:C:T: typ2 l (4)
+SY:C:T: typ4 c (1)
+SY:C:T: typ6 s (2)
+e

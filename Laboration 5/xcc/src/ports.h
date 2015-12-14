@@ -31,3 +31,15 @@ typedef voidfuncptr* vector;
 //Clock adress
 #define CLOCKVECTOR_ADDRESS 0x3FF0
 #define CLOCKVECTOR *((vector) CLOCKVECTOR_ADDRESS)
+
+// Adress till borrmaskinens styrregister
+#define DrillControlAddress 0x400
+#define DrillControl *((port8ptr) DrillControlAddress)
+
+// Adress till borrmaskinens statusregister
+#ifdef SIMULATOR
+#define DrillStatusAddress 0x401
+#else
+#define DrillStatusAddress 0x600
+#endif
+#define DrillStatus *((port8ptr) DrillStatusAddress)

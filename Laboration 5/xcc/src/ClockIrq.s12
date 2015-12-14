@@ -1,0 +1,13 @@
+	export _clocktrap
+	export _cleari
+	
+	import _clock_inter
+
+_clocktrap:
+	JSR	_clock_inter
+	RTI
+
+; Clears the interrupt flag
+_cleari:
+	CLI
+	RTS

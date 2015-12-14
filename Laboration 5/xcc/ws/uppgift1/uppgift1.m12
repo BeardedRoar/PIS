@@ -4,7 +4,7 @@
 #
 #-----------------------------------------------
 #SETTINGS SECTION
-##CSIMSET="..\ML4\ml4-simple.hc12sim"
+##CSIMSET="..\uppgift2\digits.hc12sim"
 ##EXTMAKEFILE=""
 ##EXTMAKEFILEPARAM=""
 #+[BackCol(0)]=
@@ -43,14 +43,11 @@
 ##OTYPE=1
 #-----------------------------------------------
 #OPEN FILE SECTION
-##OF "..\..\src\Appstart.s12"
-##OF "..\..\src\M4.c"
 #-----------------------------------------------
 #PROJECT FILES SECTION
 
 FILES= \
 	"..\..\src\Appstart.s12" "" "1"  \
-	"..\..\src\M4.c" "" "1"  \
 	"..\..\src\ports.h" "" "1" 
 #-----------------------------------------------
 #PROJECT OPTIONS SECTION
@@ -68,8 +65,7 @@ LNFLAGS=-g -i default.lsc
 #OBJECT FILES SECTION
 
 OBJ= \
-	"debug\Appstart.o12" \
-	"debug\M4.o12"
+	"debug\Appstart.o12"
 #-----------------------------------------------
 #DEFINES/UNDEFINES SECTION
 
@@ -124,7 +120,6 @@ LIBPATH=
 clean:
 	RMFI "debug\uppgift1_Debug.s19"
 	RMFI "debug\Appstart.o12"
-	RMFI "debug\M4.o12"
 	RMFI "debug\ports.o12"
 #-----------------------------------------------
 
@@ -134,11 +129,6 @@ clean:
 "debug\Appstart.o12":	\
 	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/Appstart.s12"
 	ASSM  $(ASFLAGS) $(ASMDEF) -o"debug\Appstart.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/Appstart.s12"
-"debug\M4.o12":	\
-	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/M4.c"\
-	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/ports.h"
-	COMP  $(CCFLAGS) $(DEF) $(UNDEF)  \
-	-I"C:\Applications\GMV\EducDist\bin\..\include" $(INC) -o"debug\M4.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/M4.c"
 !EICONF	Debug
 
 !IFCONF	Final
@@ -154,8 +144,7 @@ LNFLAGS=-i default.lsc
 #OBJECT FILES SECTION
 
 OBJ= \
-	"final\Appstart.o12" \
-	"final\M4.o12"
+	"final\Appstart.o12"
 #-----------------------------------------------
 #DEFINES/UNDEFINES SECTION
 
@@ -206,7 +195,6 @@ LIBPATH=
 clean:
 	RMFI "final\uppgift1_Final.s19"
 	RMFI "final\Appstart.o12"
-	RMFI "final\M4.o12"
 	RMFI "final\ports.o12"
 #-----------------------------------------------
 
@@ -216,9 +204,4 @@ clean:
 "final\Appstart.o12":	\
 	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/Appstart.s12"
 	ASSM  $(ASFLAGS) $(ASMDEF) -o"final\Appstart.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/Appstart.s12"
-"final\M4.o12":	\
-	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/M4.c"\
-	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/ports.h"
-	COMP  $(CCFLAGS) $(DEF) $(UNDEF)  \
-	-I"C:\Applications\GMV\EducDist\bin\..\include" $(INC) -o"final\M4.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/M4.c"
 !EICONF	Final

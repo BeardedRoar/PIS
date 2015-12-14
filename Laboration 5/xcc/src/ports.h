@@ -1,4 +1,5 @@
-typedef volatile unsigned char * port8ptr;
+typedef volatile unsigned char port8;
+typedef port8 * port8ptr;
 
 // Input, output address for ML4 (dipswitch + hexdisplay)
 #define ML4OUT_ADDRESS 0x400
@@ -23,3 +24,10 @@ typedef volatile unsigned char * port8ptr;
 #define	ML3MODE *((port8ptr) ML3MODE_ADDRESS)
 #define ML3DISPLAY_ADDRESS 0x9C3
 #define	ML3DISPLAY *((port8ptr) ML3DISPLAY_ADDRESS)
+
+typedef void (*voidfuncptr) (void);
+typedef voidfuncptr* vector;
+
+//Clock adress
+#define CLOCKVECTOR_ADDRESS 0x3FF0
+#define CLOCKVECTOR *((vector) CLOCKVECTOR_ADDRESS)

@@ -1,0 +1,282 @@
+# V 2.2 (26 February, 2013)
+# Created by Xcc-project manager 
+# DO NOT EDIT
+#
+#-----------------------------------------------
+#SETTINGS SECTION
+##CSIMSET="..\uppgift2\digits.hc12sim"
+##EXTMAKEFILE=""
+##EXTMAKEFILEPARAM=""
+#+[BackCol(0)]=
+#+16776960
+#+[TextCol(0)]=
+#+0
+#+[NewLine(0)]=
+#+2
+#+[LineFeed(0)]=
+#+2
+#+[LoadCom(0)]=
+#+l\n
+#+[Baud(0)(0)]=
+#+9600
+#+[Dtr(0)(0)]=
+#+0
+#+[Rts(0)(0)]=
+#+0
+#+[Cts(0)(0)]=
+#+0
+#+[Dsr(0)(0)]=
+#+0
+#+[ByteS(0)(0)]=
+#+8
+#+[Parity(0)(0)]=
+#+0
+#+[StopB(0)(0)]=
+#+0
+#+[EXonO(0)(0)]=
+#+0
+#+[EXonI(0)(0)]=
+#+0
+#-----------------------------------------------
+##TYPE E
+##USESTARTUP=0
+##OTYPE=1
+#-----------------------------------------------
+#OPEN FILE SECTION
+#-----------------------------------------------
+#PROJECT FILES SECTION
+
+FILES= \
+	"..\..\src\Appstart.s12" "" "1"  \
+	"..\..\src\clock.c" "" "1"  \
+	"..\..\src\clock.h" "" "1"  \
+	"..\..\src\u3main.c" "" "1"  \
+	"..\..\src\ports.h" "" "1"  \
+	"..\..\src\ClockIrq.s12" "" "1"  \
+	"..\..\src\macros.h" "" "1"  \
+	"..\..\src\displayML15.c" "" "1"  \
+	"..\..\src\displayML15.h" "" "1" 
+#-----------------------------------------------
+#PROJECT OPTIONS SECTION
+
+!IFCONF	Debug
+##TARGETNAME="uppgift3_Debug"
+##OBJDIR="debug"
+##TARGDIR="debug"
+##STDINCPATH=1
+##STDLIBPATH=1
+ASFLAGS=-g -e
+CCFLAGS=-g -w4 -O
+LNFLAGS=-g -i default.lsc
+#-----------------------------------------------
+#OBJECT FILES SECTION
+
+OBJ= \
+	"debug\Appstart.o12" \
+	"debug\clock.o12" \
+	"debug\u3main.o12" \
+	"debug\ClockIrq.o12" \
+	"debug\displayML15.o12"
+#-----------------------------------------------
+#DEFINES/UNDEFINES SECTION
+
+ASMDEFINES= \
+	_DEBUG
+
+DEFINES= \
+	_DEBUG
+
+UNDEFINES=
+#-----------------------------------------------
+#INCLUDES AND LIBRARIES SECTION
+#
+
+INCLUDES=
+
+LIBRARIES= \
+	"libcd.e12" \
+	"libed.e12" \
+	"librtkd.e12"
+
+LIBRARYPATHS=
+#-----------------------------------------------
+#MACROS for MAKE
+
+INC=
+
+ASMDEF= \
+ -D_DEBUG
+
+DEF= \
+ -D_DEBUG
+
+UNDEF=
+
+LIB= \
+	-l"libcd.e12" \
+	-l"libed.e12" \
+	-l"librtkd.e12"
+
+LIBPATH=
+#-----------------------------------------------
+#RULES SECTION CONFIGURATION 
+
+# Application
+"debug\uppgift3_Debug.s19": $(OBJ)
+	LINK -o"debug\uppgift3_Debug.s19" $(LNFLAGS)  $(LIBPATH) $(LIB) -L"C:\Applications\GMV\EducDist\bin\..\lib\xcc12" -l"C:\Applications\GMV\EducDist\bin\..\lib\xcc12\libccd.e12"  $(OBJ)
+#-----------------------------------------------
+
+
+# Clean
+clean:
+	RMFI "debug\uppgift3_Debug.s19"
+	RMFI "debug\Appstart.o12"
+	RMFI "debug\clock.o12"
+	RMFI "debug\clock.o12"
+	RMFI "debug\u3main.o12"
+	RMFI "debug\ports.o12"
+	RMFI "debug\ClockIrq.o12"
+	RMFI "debug\macros.o12"
+	RMFI "debug\displayML15.o12"
+	RMFI "debug\displayML15.o12"
+#-----------------------------------------------
+
+
+# Dependencies and their build rules
+
+"debug\Appstart.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/Appstart.s12"
+	ASSM  $(ASFLAGS) $(ASMDEF) -o"debug\Appstart.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/Appstart.s12"
+"debug\clock.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/clock.c"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/clock.h"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/ports.h"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/macros.h"
+	COMP  $(CCFLAGS) $(DEF) $(UNDEF)  \
+	-I"C:\Applications\GMV\EducDist\bin\..\include" $(INC) -o"debug\clock.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/clock.c"
+"debug\u3main.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/u3main.c"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/clock.h"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/displayML15.h"
+	COMP  $(CCFLAGS) $(DEF) $(UNDEF)  \
+	-I"C:\Applications\GMV\EducDist\bin\..\include" $(INC) -o"debug\u3main.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/u3main.c"
+"debug\ClockIrq.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/ClockIrq.s12"
+	ASSM  $(ASFLAGS) $(ASMDEF) -o"debug\ClockIrq.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/ClockIrq.s12"
+"debug\displayML15.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/displayML15.c"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/displayML15.h"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/ports.h"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/macros.h"
+	COMP  $(CCFLAGS) $(DEF) $(UNDEF)  \
+	-I"C:\Applications\GMV\EducDist\bin\..\include" $(INC) -o"debug\displayML15.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/displayML15.c"
+!EICONF	Debug
+
+!IFCONF	Final
+##TARGETNAME="uppgift3_Final"
+##OBJDIR="final"
+##TARGDIR="final"
+##STDINCPATH=1
+##STDLIBPATH=1
+ASFLAGS=-e
+CCFLAGS=-w4 -O
+LNFLAGS=-i default.lsc
+#-----------------------------------------------
+#OBJECT FILES SECTION
+
+OBJ= \
+	"final\Appstart.o12" \
+	"final\clock.o12" \
+	"final\u3main.o12" \
+	"final\ClockIrq.o12" \
+	"final\displayML15.o12"
+#-----------------------------------------------
+#DEFINES/UNDEFINES SECTION
+
+ASMDEFINES=
+
+DEFINES=
+
+UNDEFINES=
+#-----------------------------------------------
+#INCLUDES AND LIBRARIES SECTION
+#
+
+INCLUDES=
+
+LIBRARIES= \
+	"libc.e12" \
+	"libe.e12" \
+	"librtk.e12"
+
+LIBRARYPATHS=
+#-----------------------------------------------
+#MACROS for MAKE
+
+INC=
+
+ASMDEF=
+
+DEF=
+
+UNDEF=
+
+LIB= \
+	-l"libc.e12" \
+	-l"libe.e12" \
+	-l"librtk.e12"
+
+LIBPATH=
+#-----------------------------------------------
+#RULES SECTION CONFIGURATION 
+
+# Application
+"final\uppgift3_Final.s19": $(OBJ)
+	LINK -o"final\uppgift3_Final.s19" $(LNFLAGS)  $(LIBPATH) $(LIB) -L"C:\Applications\GMV\EducDist\bin\..\lib\xcc12" -l"C:\Applications\GMV\EducDist\bin\..\lib\xcc12\libcc.e12"  $(OBJ)
+#-----------------------------------------------
+
+
+# Clean
+clean:
+	RMFI "final\uppgift3_Final.s19"
+	RMFI "final\Appstart.o12"
+	RMFI "final\clock.o12"
+	RMFI "final\clock.o12"
+	RMFI "final\u3main.o12"
+	RMFI "final\ports.o12"
+	RMFI "final\ClockIrq.o12"
+	RMFI "final\macros.o12"
+	RMFI "final\displayML15.o12"
+	RMFI "final\displayML15.o12"
+#-----------------------------------------------
+
+
+# Dependencies and their build rules
+
+"final\Appstart.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/Appstart.s12"
+	ASSM  $(ASFLAGS) $(ASMDEF) -o"final\Appstart.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/Appstart.s12"
+"final\clock.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/clock.c"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/clock.h"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/ports.h"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/macros.h"
+	COMP  $(CCFLAGS) $(DEF) $(UNDEF)  \
+	-I"C:\Applications\GMV\EducDist\bin\..\include" $(INC) -o"final\clock.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/clock.c"
+"final\u3main.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/u3main.c"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/clock.h"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/displayML15.h"
+	COMP  $(CCFLAGS) $(DEF) $(UNDEF)  \
+	-I"C:\Applications\GMV\EducDist\bin\..\include" $(INC) -o"final\u3main.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/u3main.c"
+"final\ClockIrq.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/ClockIrq.s12"
+	ASSM  $(ASFLAGS) $(ASMDEF) -o"final\ClockIrq.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/ClockIrq.s12"
+"final\displayML15.o12":	\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/displayML15.c"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/displayML15.h"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/ports.h"\
+	"C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/macros.h"
+	COMP  $(CCFLAGS) $(DEF) $(UNDEF)  \
+	-I"C:\Applications\GMV\EducDist\bin\..\include" $(INC) -o"final\displayML15.o12" "C:/Users/Ulrika/DAT016/PIS/Laboration 5/xcc/src/displayML15.c"
+!EICONF	Final

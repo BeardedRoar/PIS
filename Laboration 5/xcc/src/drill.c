@@ -81,6 +81,9 @@ int Nstep(int steps) {
    return 1;
 }
 
+/* Waits a maximum of 5 s for the drill to reach the down position. The indicator
+ will be read 4 times s second. If the drill is not in the down position after
+ 5 s two alarm signals will be given instead. */
 int DrillDownTest(void){
 	int i;
 	for (i = 0; i < 20; i++){
@@ -106,6 +109,7 @@ void Alarm(int n) {
    }
 }
 
+/* Drills a hole in the workpiece at the current position. */
 int DrillHole(void){
 	unsigned int success;
 	DrillDown();
@@ -114,6 +118,7 @@ int DrillHole(void){
 	return success;
 }
 
+/* Rotates the workpiece until it is in the reference position. */
 int RefPos(void){
 	while((DrillStatus) & 1){
 		if (!Step()){
@@ -123,4 +128,5 @@ int RefPos(void){
 	return 1;
 }
 
+/* Drills the workpiece according to a given pattern. */
 void DoAuto(void);

@@ -5,6 +5,6 @@ void DrillUp(void);
 int Nstep(int);
 int DrillDownTest(void);
 void Alarm(int);
-void DrillHole(void);
+int DrillHole(void);
 int RefPos(void);
 void DoAuto(void);

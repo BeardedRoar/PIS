@@ -47,8 +47,34 @@ void DrillDown(void) {
 
 void DrillUp(void);
 int Nstep(int);
-int DrillDownTest(void);
+int DrillDownTest(void){
+	int i;
+	for (i = 0; i < 20; i++){
+		if ((DrillStatus) & 4){
+			return 1;
+		}
+		hold((time_type)250);
+	}
+	Alarm(2);
+	return 0;
+}
+
 void Alarm(int);
-void DrillHole(void);
-int RefPos(void);
+
+int DrillHole(void){
+	unsigned int success;
+	DrillDown();
+	success = DrillDownTest();
+	DrillUp();
+	return success;
+}
+
+int RefPos(void){
+	while((DrillStatus) & 1){
+		if (!Step()){
+			return 0;
+		}
+	}
+	return 1;
+}
 void DoAuto(void);
